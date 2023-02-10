@@ -29,7 +29,7 @@ html {
   font-family: var(--font);
   /* font-size: 1rem;  */
   font-size: 16px; /*16px igual a 1 rem*/
-  /* scroll-behavior: smooth; */
+  scroll-behavior: smooth;
 }
 
 *,
@@ -96,7 +96,7 @@ p {
 }
 
 /*********************** 3. Componentes ****************************/
-/* Cabecera */
+/* 3.1 Cabecera */
 .menu-btn {
   outline: thin solid var(--first-color);
   border: 0;
@@ -168,6 +168,59 @@ p {
   }
 }
 
+/* 3.2 Inicio */
+.hero-image {
+  background-image: var(--hero-image);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: var(--hero-attachment);
+}
+
+.hero-image-opacity {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: var(--hero-opacity-color);
+}
+
+.hero-image-title {
+  font-size: 7.5vw;
+  color: var(--hero-text-color);
+}
+
+/* 3.3 Acerca*/
+/* ProgressBar*/
+progress {
+  width: 100%;
+  height: 1rem;
+  background-color: var(--gray-color);
+}
+
+progress::-webkit-progress-bar {
+  background-color: var(--gray-color);
+}
+progress::-moz-progress-bar {
+  background-color: var(--gray-dark-color);
+}
+progress::-webkit-progress-value {
+  background-color: var(--gray-dark-color);
+}
+
+.progress {
+  margin: 1rem auto;
+}
+
+.progress > p {
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+}
+
 /************************* 4. Utilidades ****************************/
 /* Se está utilizando en este proyecto, pero bien se puede utilizar en algún otro proyecto*/
 .box-shadow-1 {
@@ -183,8 +236,78 @@ p {
 .none {
   display: none;
 }
+
+.section {
+  padding: 2rem 1rem;
+}
+
+/* 4.1 Inicio */
+.btn {
+  border-radius: 0.5rem;
+  padding: 1rem;
+  display: inline-block;
+  width: 200px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: var(--white-color);
+  background-color: var(--first-color);
+}
+
+/* 4.2 Acerca*/
+
+.gray-scale {
+  filter: grayscale(1);
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+@media screen and (min-width: 1024px) {
+  .full-lg-screen {
+    width: 100%;
+    min-height: 100vh;
+  }
+
+  .text-lg-left {
+    text-align: left;
+  }
+
+  .text-lg-center {
+    text-align: center;
+  }
+
+  .text-lg-right {
+    text-align: right;
+  }
+}
+
+/* 4.3 Servicios */
+.bg-gray-light {
+  background-color: var(--gray-light-color);
+}
+
+.section-title {
+  border-top: thin solid var(--first-color);
+  border-bottom: thin solid var(--first-color);
+  margin: 2rem auto;
+  padding: 0.5rem 1rem;
+  width: 250px;
+  text-align: center;
+  color: var(--title-color);
+}
+
 /************************** 5. Site Styles *************************/
-/*Cabecera*/
+/* 5.1 Cabecera*/
 .header {
   position: fixed;
   padding: 1rem;
@@ -209,17 +332,67 @@ p {
   text-decoration: none;
 }
 
+/* 5.2 Acerca */
+.about > article {
+  margin-bottom: 2rem;
+}
+
+/* 5.3 Servicios*/
+.service-card {
+  margin: 1rem auto;
+  padding: 1rem;
+  text-align: center;
+}
+
+.service-card h3 {
+  color: var(--title-color);
+}
+
+.service-card svg {
+  margin-bottom: 1.25rem;
+  fill: var(--first-color);
+}
+
 @media screen and (min-width: 768px) {
+  /* Servicios */
+  .services > .container {
+    display: grid;
+    grid-template-columns: repeat(2, 45%);
+    justify-content: space-between;
+    align-content: center;
+  }
+
+  .services .section-title {
+    grid-column: span 2;
+  }
 }
 @media screen and (min-width: 1024px) {
+  /* Cabecera*/
   .header {
     position: sticky;
     top: 0;
     padding: 0.5rem;
     height: calc(var(--header-height)-0.5rem);
   }
+
+  /* Acerca */
+  .about {
+    display: grid;
+    grid-template-columns: repeat(3, 30%);
+    justify-content: space-between;
+    align-content: center;
+  }
+
+  /*Servicios*/
+  .services > .container {
+    grid-template-columns: repeat(3, 30%);
+  }
+
+  .services .section-title {
+    grid-column: span 3;
+  }
 }
 
 /* DRY -> don't repeat yourself, si ya lo hiciste una vez, no te repitas */
 
-/* minuto 1:39:06*/
+/* minuto 3:04:39*/ ;
